@@ -21,9 +21,14 @@
   end
 
   feature 'Player 1 attack Player 2' do
-    scenario 'Confirmation of attack to Player 1 after Attack' do
+    before do
       sign_in_and_play
       click_button "Attack"
+    end
+    scenario 'Confirmation of attack to Player 1 after Attack' do
       expect(page).to have_content("Player 1 Attacked!")
+    end
+    scenario 'Player 2 HP reduced by 10' do
+      expect(page).to have_content("Player 2 HP: 50")
     end
   end
