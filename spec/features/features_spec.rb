@@ -19,3 +19,11 @@
       expect(page).to have_content("Player 2 HP: 60")
     end
   end
+
+  feature 'Player 1 attack Player 2' do
+    scenario 'Confirmation of attack to Player 1 after Attack' do
+      sign_in_and_play
+      click_button "Attack"
+      expect(page).to have_content("Player 1 Attacked!")
+    end
+  end
