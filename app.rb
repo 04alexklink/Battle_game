@@ -5,7 +5,7 @@ class Battle < Sinatra::Base
     erb:index
   end
   post '/names' do
-   @First_Player_Name = params[:First_Player_name]
+   @First_Player_Name = params[:First_Player_Name]
    @Second_Player_Name = params[:Second_Player_Name]
    erb:players
   end
