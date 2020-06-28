@@ -1,9 +1,9 @@
-<h1> <%= @First_Player_Name %> v <%= @Second_Player_Name %> </h1>
+<h1> <%= @game.player1.name %> v <%= @game.player2.name %> </h1>
 
-<h2>Player 2 HP: <%= @Second_Player_hp %></h2>
+<h2><%= @game.player2.name %> HP: <%= @game.player2.hp %></h2>
 
 <h2>Status: 
-  <% if @player_1_attack_state %>Player 1 Attacked!<% end %>
+  <% if @player_1_attack_state %> <%= @game.player1.name %> attacked <%= @game.player2.name%> !<% end %>
 </h2>
 
 <form action="/p1attack" method="post">

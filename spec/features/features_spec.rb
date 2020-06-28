@@ -16,7 +16,7 @@
   feature 'display player hit points' do
     scenario 'Player 2 Hit Points displayed to Player 1' do
       sign_in_and_play
-      expect(page).to have_content("Player 2 HP: 60")
+      expect(page).to have_content("Adam HP: 60")
     end
   end
 
@@ -26,9 +26,9 @@
       click_button "Attack"
     end
     scenario 'Confirmation of attack to Player 1 after Attack' do
-      expect(page).to have_content("Player 1 Attacked!")
+      expect(page).to have_content("Alex attacked Adam !")
     end
     scenario 'Player 2 HP reduced by 10' do
-      expect(page).to have_content("Player 2 HP: 50")
+      expect(page).to have_content("Adam HP: 50")
     end
   end
