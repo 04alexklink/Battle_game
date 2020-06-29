@@ -6,6 +6,10 @@
   <% if @player_1_attack_state %> <%= @game.player1.name %> attacked <%= @game.player2.name%> !<% end %>
 </h2>
 
-<form action="/p1attack" method="post">
+<h2>
+<%= @game.current_turn.name %>'s turn
+</h2>
+
+<form action="/attack" method="post">
   <input type="submit" value="Attack">
 </form>

@@ -8,11 +8,12 @@ class Battle < Sinatra::Base
     erb:index
   end
 
-  post '/p1attack' do
+  post '/attack' do
     session[:player_1_attack_state] = true
     # $player2.attacked
     @game = $game
     @game.attack(@game.player2)
+    @game.switch_turns
     redirect '/players'
   end
 

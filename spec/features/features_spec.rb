@@ -31,4 +31,15 @@
     scenario 'Player 2 HP reduced by 10' do
       expect(page).to have_content("Adam HP: 50")
     end
+  feature 'Switch players' do
+    scenario 'at start of the game, says on screen it is player 1s turn' do
+      sign_in_and_play
+      expect(page).to have_content("Alex's turn")
+    end
+    scenario 'after play 1 has gone, switch to player 2s turn on screen' do
+      sign_in_and_play
+      click_button "Attack"
+      expect(page).to have_content("Adam's turn")
+    end
   end
+end
